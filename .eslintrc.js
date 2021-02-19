@@ -1,5 +1,4 @@
 module.exports = {
-	"useTabs": false,
 	root: true,
 	// eslint-disable-next-line prettier/prettier
 	env: {
@@ -15,10 +14,7 @@ module.exports = {
 	],
 	"rules": {
 		"prettier/prettier": {
-			"error":
-			{
-			  "endOfLine": "auto"
-			},
+			"error": 1
 		  }, },
 	globals: {
 		$nuxt: true
