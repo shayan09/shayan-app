@@ -14,7 +14,7 @@ module.exports = {
 	],
 	"rules": {
 		"prettier/prettier": {
-			"error": 1
+			"error": '1'
 		  }, },
 	globals: {
 		$nuxt: true
