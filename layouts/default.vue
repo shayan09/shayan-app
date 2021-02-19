@@ -1,11 +1,9 @@
 <template>
-  <v-app style="overflow-y: hidden">
+  <v-app>
     <v-toolbar
-      class="white--text"
+      class="header"
       flat
       color="blue"
-      max-height="15%"
-      width="100%"
     >
       <v-btn class="pa-2 mt-2 mr-2" to="/about">
         About Me<v-icon right dark> mdi-face </v-icon></v-btn
@@ -56,9 +54,13 @@ export default {
   },
 }
 </script>
-<style>
-.v-toolbar {
+<style lang="scss">
+.header {
+  color: white;
+  position: relative;
+  height: 120px !important;
+  width: 100% !important;
   font-family: 'Crimson Pro', serif;
   font-weight: bold;
 }
-</style>
+</style>>
