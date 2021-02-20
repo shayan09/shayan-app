@@ -18,10 +18,10 @@
           'I PROVIDE RICH INTERACTIVE EXPERIENCES FOR THE WEB WITH A SPECIALIZATION IN EVERYTHING.',
           'I PROVIDE RICH INTERACTIVE EXPERIENCES FOR THE WEB WITH A SPECIALIZATION IN BACKEND ENGINEERING AND MACHINE LEARNING.',
         ]"
-        typeSpeed="9"
-        smartBackspace="true"
-        backSpeed="8"
-        backDelay="300"
+        type-speed="9"
+        smart-backspace="true"
+        back-speed="8"
+        back-delay="300"
       >
         <v-subheader
           class="ma-3 typing"

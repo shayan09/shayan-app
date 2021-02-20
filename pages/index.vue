@@ -9,19 +9,19 @@
     </v-row>
     <v-row class="mt-2">
       <v-spacer />
-      <v-btn @click="selectedIntro = 1" icon
+      <v-btn icon @click="selectedIntro = 1"
         ><v-icon>mdi-checkbox-blank-circle-outline</v-icon></v-btn
       >
-      <v-btn @click="selectedIntro = 2" icon
+      <v-btn icon @click="selectedIntro = 2"
         ><v-icon>mdi-checkbox-blank-circle-outline</v-icon></v-btn
       >
-      <v-btn @click="selectedIntro = 3" icon
+      <v-btn icon @click="selectedIntro = 3"
         ><v-icon>mdi-checkbox-blank-circle-outline</v-icon></v-btn
       >
-      <v-btn @click="selectedIntro = 4" icon
+      <v-btn icon @click="selectedIntro = 4"
         ><v-icon>mdi-checkbox-blank-circle-outline</v-icon></v-btn
       >
-      <v-btn @click="selectedIntro = 5" icon
+      <v-btn icon @click="selectedIntro = 5"
         ><v-icon>mdi-checkbox-blank-circle-outline</v-icon></v-btn
       >
       <v-spacer />
