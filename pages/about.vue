@@ -137,7 +137,7 @@ export default {
 						'Design and develop full-stack web applications using Vue.js, Nuxt.js, Node.js, Python, Docker and SQL. Architect and implement the back-end and offer scaling solutions to improve existing services. Add the ability for our customers to develop an end product using our existing software in multiple languages. Develop a Chatbot Marketplace that allows potential new customers to use and experience our software solutions. Improve the deployment pipeline with Docker and CI/CD. Collaborate with multiple teams to review and approve code changes.',
 						'Responsible for developing the back-end infrastructure for chat-bots using Python, Node.js and Natural Language Processing (NLP) using Spacy. Participate in all phases of development starting with a conceptual model through functional and detailed design to implementation, debugging and deployment of the software. Manage elements of our internal infrastructure to support software deployment and display flexibility to work across technologies based on new development activities specific to the customer mission. Initiating and executing mid- and long-term project improvements.'
 					],
-					years: ['Aug 2020 - Present', 'Aug 2019 - Jul 2020'],
+					years: ['Aug 2019 - Present', 'Aug 2020 - Present', 'Aug 2019 - Jul 2020'],
 					img: 'qliq.webp'
 				},
 				{
@@ -193,7 +193,6 @@ export default {
 .work-card {
 	border-radius: 20px !important;
 	margin: 15px auto;
-	height: 500px;
 	width: 400px;
 	padding: 10px;
 }
