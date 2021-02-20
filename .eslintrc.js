@@ -14,7 +14,10 @@ module.exports = {
 	],
 	"rules": {
 		"prettier/prettier": {
-			"error": '1'
+			"error":
+			{
+			  "endOfLine": "auto"
+			},
 		  }, },
 	globals: {
 		$nuxt: true
