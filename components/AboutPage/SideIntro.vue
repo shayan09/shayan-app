@@ -1,8 +1,8 @@
 <template>
 	<v-col class="pa-3 mt-3" cols="2" elevation="6">
 		<v-card>
-			<v-img src="images/my-photo.jpg" aspect-ratio="1" />
-			<v-card-title style="word-break: break-word">Introduction</v-card-title>
+			<v-img :src="require('../../assets/images/my-photo.jpeg')" aspect-ratio="0.75" class="image" />
+			<v-card-title class="justify-center" style="word-break: break-word">Introduction</v-card-title>
 			<v-card-text
 				style="font-family: 'Montserrat', sans-serif"
 				v-html="finalContent"
@@ -50,5 +50,9 @@ export default {
 <style lang="scss" scoped>
 .v-icon {
 	text-decoration: none;
+}
+.image {
+	height: 300px;
+	border-radius: 50%;
 }
 </style>
