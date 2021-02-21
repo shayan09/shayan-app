@@ -1,9 +1,9 @@
 <template>
-  <v-layout>
-    <v-spacer />
-    <v-img src="/images/coming-soon.jpg" />
-    <v-spacer />
-  </v-layout>
+	<v-layout>
+		<v-spacer />
+		<v-img src="/images/coming-soon.jpg" />
+		<v-spacer />
+	</v-layout>
 </template>
 
 <script>
