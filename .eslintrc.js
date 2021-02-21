@@ -12,17 +12,13 @@ module.exports = {
 		'prettier/vue',
 		'plugin:prettier/recommended'
 	],
-	"rules": {
-		"prettier/prettier": {
-			"error":
-			{
-			  "endOfLine": "auto"
-			},
-		  }, },
-	globals: {
-		$nuxt: true
-	},
-	parserOptions: {
-		parser: 'babel-eslint'
+	'rules': {
+		'prettier/prettier': 1,
+		globals: {
+			$nuxt: true
+		},
+		parserOptions: {
+			parser: 'babel-eslint'
+		}
 	}
 }
