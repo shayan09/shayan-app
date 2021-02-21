@@ -26,7 +26,7 @@
 				class="mt-5"
 				aspect-ratio="1"
 				contain
-				max-height="200"
+				max-height="400"
 				src="images/intro-two.png"
 			/>
 		</v-row>
