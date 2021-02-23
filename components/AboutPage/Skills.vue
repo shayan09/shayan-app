@@ -19,7 +19,15 @@
 export default {
 	data() {
 		return {
-			skills: ['node.png', 'python.png', 'vue.png', 'sql.png', 'docker.png', 'ml.png', 'redis.png']
+			skills: [
+				'node.png',
+				'python.png',
+				'vue.png',
+				'sql.png',
+				'docker.png',
+				'ml.png',
+				'redis.png'
+			]
 		}
 	}
 }

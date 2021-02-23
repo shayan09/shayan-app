@@ -54,6 +54,6 @@ export default {
 	font-weight: bold;
 }
 .v-toolbar__content {
-  width: 100%;
+	width: 100%;
 }
 </style>

@@ -1,8 +1,14 @@
 <template>
 	<v-col class="pa-3 mt-3" cols="2" elevation="6">
 		<v-card>
-			<v-img :src="require('../../assets/images/my-photo.jpeg')" aspect-ratio="0.75" class="image" />
-			<v-card-title class="justify-center" style="word-break: break-word">Introduction</v-card-title>
+			<v-img
+				:src="require('../../assets/images/my-photo.jpeg')"
+				aspect-ratio="0.75"
+				class="image"
+			/>
+			<v-card-title class="justify-center" style="word-break: break-word"
+				>Introduction</v-card-title
+			>
 			<v-card-text
 				style="font-family: 'Montserrat', sans-serif"
 				v-html="finalContent"

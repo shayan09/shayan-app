@@ -61,6 +61,6 @@ export default {
 
 <style lang="scss" scoped>
 .intro {
-  height: 90vh;
+	height: 90vh;
 }
 </style>
