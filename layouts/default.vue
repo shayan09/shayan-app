@@ -1,12 +1,9 @@
 <template>
 	<v-app>
 		<v-toolbar class="header justify-center" flat color="blue">
-			<v-btn class="pa-2 mt-2 mr-2" to="/about">
-				About Me<v-icon right dark> mdi-face </v-icon></v-btn
-			>
-			<v-btn class="pa-2 mt-2" to="/blogs"
+			<!-- <v-btn class="pa-2 mt-2" to="/blogs"
 				>Blogs <v-icon right dark> mdi-file-word </v-icon></v-btn
-			>
+			> -->
 			<v-spacer></v-spacer>
 			<nuxt-link to="/" class="white--text mt-5" style="text-decoration: none"
 				><v-toolbar-title class="pa-2 mt-5" style="font-size: 10em"
@@ -14,8 +11,11 @@
 				></nuxt-link
 			>
 			<v-spacer></v-spacer>
-			<v-btn class="pa-2 mt-2 mr-2" to="/captures"
+			<!-- <v-btn class="pa-2 mt-2 mr-2" to="/captures"
 				>Captures<v-icon right dark> mdi-camera </v-icon></v-btn
+			> -->
+			<v-btn class="pa-2 mt-2 mr-2" to="/about">
+				About Me<v-icon right dark> mdi-face </v-icon></v-btn
 			>
 			<v-btn class="pa-2 mt-2" to="/contact"
 				>Contact<v-icon right dark> mdi-card-account-mail </v-icon></v-btn

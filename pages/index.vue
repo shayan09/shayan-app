@@ -45,7 +45,7 @@ export default {
 		}
 	},
 	created() {
-		this.interval = setInterval(this.changeIntro, 20000)
+		this.interval = setInterval(this.changeIntro, 25000)
 	},
 	methods: {
 		changeIntro() {
@@ -61,6 +61,7 @@ export default {
 
 <style lang="scss" scoped>
 .intro {
+	padding-top: 7%;
 	height: 90vh;
 }
 </style>

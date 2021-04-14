@@ -14,9 +14,6 @@ module.exports = {
 	],
 	'rules': {
 		'prettier/prettier': 1,
-		globals: {
-			$nuxt: true
-		},
 		parserOptions: {
 			parser: 'babel-eslint'
 		}
