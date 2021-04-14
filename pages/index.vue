@@ -45,7 +45,7 @@ export default {
 		}
 	},
 	created() {
-		this.interval = setInterval(this.changeIntro, 25000)
+		this.interval = setInterval(this.changeIntro, 20000)
 	},
 	methods: {
 		changeIntro() {
