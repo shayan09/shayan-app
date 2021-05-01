@@ -9,10 +9,10 @@
 			<v-card-title class="justify-center" style="word-break: break-word"
 				>Introduction</v-card-title
 			>
-			<v-card-text
+			<!-- <v-card-text
 				style="font-family: 'Montserrat', sans-serif"
 				v-html="finalContent"
-			></v-card-text>
+			></v-card-text> -->
 			<v-card-actions>
 				<v-spacer></v-spacer>
 				<v-icon v-if="icon" color="primary" @click="modifyContent(icon)"

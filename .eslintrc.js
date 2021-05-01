@@ -13,9 +13,6 @@ module.exports = {
 		'plugin:prettier/recommended'
 	],
 	'rules': {
-		'prettier/prettier': 1,
-		parserOptions: {
-			parser: 'babel-eslint'
-		}
+		'prettier/prettier': 1
 	}
 }

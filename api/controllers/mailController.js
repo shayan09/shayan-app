@@ -1,9 +1,8 @@
 const nodemailer = require('nodemailer')
 const { username, password } = require('../../config/mailer.config')
 
-
 module.exports.sendMail = async function (req, res) {
-	const {name, email, message } = req.body
+	const { name, email, message } = req.body
 
 	// create reusable transporter object using the default SMTP transport
 	let transporter = nodemailer.createTransport({
@@ -18,8 +17,8 @@ module.exports.sendMail = async function (req, res) {
 	})
 
 	let mailOptions = {
-		from: 'samsimmons9308@gmail.com', 
-		to: 'shayansadar37@gmail.com', 
+		from: 'samsimmons9308@gmail.com',
+		to: 'shayansadar37@gmail.com',
 		subject: 'New Connection',
 		html: `<h3>Information:</h3>
 		<p>
@@ -31,7 +30,7 @@ module.exports.sendMail = async function (req, res) {
 		<p style="color:#143D67;"><b><i>shayansadar.com © 2021</i></b></p>`
 	}
 
-	transporter.sendMail(mailOptions, (error, info) => {
+	transporter.sendMail(mailOptions, (error) => {
 		if (error) {
 			return console.log(error.message)
 		}
