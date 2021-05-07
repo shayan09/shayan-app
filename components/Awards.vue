@@ -48,7 +48,6 @@ export default {
 <style lang="scss" scoped>
 .award-list {
 	list-style: none;
-	margin-left: 5%;
 }
 .years {
 	color: gray;

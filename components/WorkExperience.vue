@@ -1,15 +1,15 @@
 <template>
-	<div>
-		<h2 class="about-header pa-3 mt-3">WORK EXPERIENCE</h2>
-		<ul>
+	<div class="work-container">
+		<h2 class="work-header pa-3 mt-3">WORK EXPERIENCE</h2>
+		<ul class="work-list">
 			<v-row class="work-container" cols="12">
-				<li v-for="work in workExperience" :key="work.title" class="work-list">
-					<v-card class="work-card text-center" elevation="2">
+				<li v-for="work in workExperience" :key="work.title" style="width: 100%">
+					<v-card class="work-card text-center col-md-4" flat>
 						<div class="row">
 							<v-img
-								:src="require(`../../assets/logos/${work.img}`)"
-								height="200px"
-								width="100px"
+								:src="require(`../assets/logos/${work.img}`)"
+								max-height="200px"
+								max-width="100%"
 							/>
 						</div>
 						<v-card-title class="justify-center mt-1"> {{ work.title }} </v-card-title>
@@ -78,17 +78,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.work-container {
+	width: 100%;
+	height: 100%;
+	font-size: 10px;
+}
+.work-header {
+	text-align: center;
+}
 .work-list {
+	width: 100%;
+	height: 100%;
 	list-style: none;
-	margin-left: 5%;
 }
 .years {
 	color: gray;
 }
 .work-card {
-	border-radius: 20px !important;
-	margin: 15px auto;
-	width: 400px;
+	// border-radius: 20px !important;
+	// margin: 15px auto;
+	width: 100%;
+	height: 100%;
 	padding: 10px;
 }
 </style>

@@ -1,30 +1,26 @@
 <template>
-	<v-col class="pa-3 mt-3" cols="2" elevation="6">
-		<v-card>
-			<v-img
-				:src="require('../../assets/images/my-photo.jpeg')"
-				aspect-ratio="0.75"
-				class="image"
-			/>
-			<v-card-title class="justify-center" style="word-break: break-word"
-				>Introduction</v-card-title
+	<v-card class="intro-card pa-3 mt-3" elevation="6">
+		<v-img
+			:src="require('../assets/images/my-photo.jpeg')"
+			aspect-ratio="0.75"
+			class="image"
+		/>
+		<v-card-title class="justify-center" style="word-break: break-word"
+			>Introduction</v-card-title
+		>
+		<v-card-text
+			style="font-family: 'Montserrat', sans-serif"
+			v-html="finalContent"
+		></v-card-text>
+		<v-card-actions>
+			<v-spacer></v-spacer>
+			<v-icon v-if="icon" color="primary" @click="modifyContent(icon)"
+				>mdi-chevron-down</v-icon
 			>
-			<v-card-text
-				style="font-family: 'Montserrat', sans-serif"
-				v-html="finalContent"
-			></v-card-text>
-			<v-card-actions>
-				<v-spacer></v-spacer>
-				<v-icon v-if="icon" color="primary" @click="modifyContent(icon)"
-					>mdi-chevron-down</v-icon
-				>
-				<v-icon v-else color="primary" @click="modifyContent(icon)"
-					>mdi-chevron-up</v-icon
-				>
-				<v-spacer></v-spacer>
-			</v-card-actions>
-		</v-card>
-	</v-col>
+			<v-icon v-else color="primary" @click="modifyContent(icon)">mdi-chevron-up</v-icon>
+			<v-spacer></v-spacer>
+		</v-card-actions>
+	</v-card>
 </template>
 
 <script>
@@ -58,7 +54,7 @@ export default {
 	text-decoration: none;
 }
 .image {
-	height: 300px;
+	max-height: 300px;
 	border-radius: 50%;
 }
 </style>

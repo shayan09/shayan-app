@@ -1,12 +1,12 @@
 <template>
 	<div>
 		<h2 class="about-header pa-3 mt-3">SKILLS</h2>
-		<div class="row">
+		<div class="row skill-line">
 			<li v-for="skill in skills" :key="skill" class="skill-list">
 				<div
 					class="icon"
 					:style="{
-						'background-image': 'url(' + require(`../../assets/logos/${skill}`) + ')'
+						'background-image': 'url(' + require(`../assets/logos/${skill}`) + ')'
 					}"
 				/>
 			</li>
@@ -34,9 +34,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.skill-line {
+	justify-content: space-evenly;
+}
 .skill-list {
 	list-style: none;
-	margin-left: 5%;
 }
 .icon {
 	display: inline-block;

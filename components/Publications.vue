@@ -1,7 +1,11 @@
 <template>
 	<div>
 		<h2 class="about-header pa-3 mt-3">PUBLICATIONS</h2>
-		<li v-for="publication in publications" :key="publication" class="publication-list">
+		<li
+			v-for="publication in publications"
+			:key="publication"
+			class="publication-list ml-3"
+		>
 			{{ publication }}
 			<v-btn
 				icon
@@ -28,7 +32,6 @@ export default {
 <style lang="scss" scoped>
 .publication-list {
 	list-style: none;
-	margin-left: 5%;
 }
 .years {
 	color: gray;

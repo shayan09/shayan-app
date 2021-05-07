@@ -1,67 +1,99 @@
 <template>
-	<div>
-		<v-row class="intro">
-			<IntroOne v-if="selectedIntro == 1" />
-			<IntroTwo v-if="selectedIntro == 2" />
-			<IntroThree v-if="selectedIntro == 3" />
-			<IntroFour v-if="selectedIntro == 4" />
-			<IntroFive v-if="selectedIntro == 5" />
-		</v-row>
-		<v-row class="mt-2">
-			<v-spacer />
-			<v-btn icon @click="selectedIntro = 1"
-				><v-icon>mdi-checkbox-blank-circle-outline</v-icon></v-btn
+	<v-container fluid class="mb-10">
+		<div v-if="isSmallScreen" class="mobile-view">
+			<div
+				v-for="rowIdx in Math.ceil(components.length / 3)"
+				:key="rowIdx"
+				class="row subheader-list"
 			>
-			<v-btn icon @click="selectedIntro = 2"
-				><v-icon>mdi-checkbox-blank-circle-outline</v-icon></v-btn
-			>
-			<v-btn icon @click="selectedIntro = 3"
-				><v-icon>mdi-checkbox-blank-circle-outline</v-icon></v-btn
-			>
-			<v-btn icon @click="selectedIntro = 4"
-				><v-icon>mdi-checkbox-blank-circle-outline</v-icon></v-btn
-			>
-			<v-btn icon @click="selectedIntro = 5"
-				><v-icon>mdi-checkbox-blank-circle-outline</v-icon></v-btn
-			>
-			<v-spacer />
-		</v-row>
-	</div>
+				<div
+					v-for="(item, index) in components.slice(3 * (rowIdx - 1), 3 * rowIdx)"
+					:key="index"
+					class="subheader-item"
+				>
+					<v-btn class="item-btn ma-2" @click="activeComponent = item">{{ item }}</v-btn>
+				</div>
+			</div>
+			<v-row v-if="activeComponent == 'Intro'" class="mx-2">
+				<SideIntro />
+			</v-row>
+			<v-row v-else class="mx-2">
+				<v-card elevation="6">
+					<Education v-if="activeComponent == 'Education'" />
+					<WorkExperience v-else-if="activeComponent == 'WorkEx'" />
+					<Skills v-else-if="activeComponent == 'Skills'" />
+					<Publications v-else-if="activeComponent == 'Publications'" />
+					<Awards v-else-if="activeComponent == 'Awards'" />
+				</v-card>
+			</v-row>
+		</div>
+		<div v-else class="desktop-view">
+			<v-row>
+				<v-col cols="2">
+					<SideIntro />
+				</v-col>
+				<v-col cols="10">
+					<v-card>
+						<Education />
+
+						<WorkExperience />
+
+						<Skills />
+
+						<Publications />
+
+						<Awards />
+					</v-card>
+				</v-col>
+			</v-row>
+		</div>
+	</v-container>
 </template>
 
 <script>
-import IntroOne from '../components/MainPage/IntroOne'
-import IntroTwo from '../components/MainPage/IntroTwo'
-import IntroThree from '../components/MainPage/IntroThree'
-import IntroFour from '../components/MainPage/IntroFour'
-import IntroFive from '../components/MainPage/IntroFive'
+import SideIntro from '../components/SideIntro'
+import Education from '../components/Education'
+import WorkExperience from '../components/WorkExperience'
+import Skills from '../components/Skills'
+import Publications from '../components/Publications'
+import Awards from '../components/Awards'
 
 export default {
-	components: { IntroOne, IntroTwo, IntroThree, IntroFour, IntroFive },
+	components: {
+		SideIntro,
+		Education,
+		WorkExperience,
+		Skills,
+		Publications,
+		Awards
+	},
 	data() {
 		return {
-			interval: undefined,
-			selectedIntro: 1
+			components: ['Intro', 'Education', 'WorkEx', 'Skills', 'Publications', 'Awards'],
+			isSmallScreen: null,
+			activeComponent: 'Intro'
 		}
 	},
-	created() {
-		this.interval = setInterval(this.changeIntro, 20000)
-	},
-	methods: {
-		changeIntro() {
-			if (this.selectedIntro < 5) {
-				this.selectedIntro += 1
-			} else {
-				this.selectedIntro = 1
-			}
-		}
+	mounted() {
+		this.isSmallScreen = window.innerWidth < 868
 	}
 }
 </script>
 
 <style lang="scss" scoped>
-.intro {
-	padding-top: 7%;
-	height: 90vh;
+.mobile-view .desktop-view {
+	width: 100%;
+}
+.subheader-item {
+	list-style: none;
+}
+.subheader-list {
+	width: 100%;
+	justify-content: space-evenly;
+	// margin: auto;
+}
+.item-btn {
+	font-size: 12px;
+	width: 100px;
 }
 </style>
