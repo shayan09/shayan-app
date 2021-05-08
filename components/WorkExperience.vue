@@ -13,19 +13,18 @@
 		>
 			WORK EXPERIENCE
 		</p>
-		<ul class="work-list row">
+		<ul class="work-list row px-0">
 			<li
 				v-for="work in workExperience"
 				:key="work.title"
 				:class="isSmallScreen ? 'col-md-12' : 'col-md-4'"
 			>
 				<v-card class="work-card text-center" flat>
-					<div class="row">
+					<div class="row justify-center">
 						<v-img
 							class="ml-0"
 							:src="require(`../assets/logos/${work.img}`)"
 							max-height="200px"
-							width="100%"
 						/>
 					</div>
 					<v-card-title class="justify-center mt-1"> {{ work.title }} </v-card-title>
@@ -115,16 +114,12 @@ export default {
 	color: white;
 }
 .work-list {
-	// width: 100%;
-	// height: 100%;
 	list-style: none;
 }
 .years {
 	color: gray;
 }
 .work-card {
-	// border-radius: 20px !important;
-	// margin: 15px auto;
 	width: 100%;
 	height: 100%;
 	padding: 10px;

@@ -58,6 +58,7 @@ export default {
 <style lang="scss" scoped>
 .main-container {
 	width: 100%;
+	overflow: hidden;
 }
 .subheader-item {
 	list-style: none;
