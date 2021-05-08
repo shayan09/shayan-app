@@ -8,10 +8,32 @@ export default {
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-			{ hid: 'description', name: 'description', content: '' }
+			{ hid: 'description', name: 'description', content: '' },
+			{ hid: 'og:title', name: 'og:title', content: 'Shayan Sadar' },
+			{
+				hid: 'og:site_name',
+				name: 'og:site_name',
+				content: 'Shayan Sadar'
+			},
+			{
+				hid: 'og:description',
+				name: 'og:description',
+				content: 'Personal Website'
+			},
+			{
+				hid: 'og:image',
+				name: 'og:image',
+				content: 'https://twitter.com/shayansadar/photo'
+			},
+			{ hid: 'description', name: 'description', content: 'Shayan Sadar' },
+			{
+				hid: 'keywords',
+				name: 'keywords',
+				content:
+					'Shayan Sadar, Developer, Senior Software Engineer, Hire, Backend Engineer, NLP, Node.js, Python, Vue.js, FullStack developer, DevOps'
+			}
 		],
 		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 			{
 				rel: 'stylesheet',
 				href: 'https://fonts.googleapis.com/css?family=Crimson+Pro'
@@ -31,7 +53,6 @@ export default {
 			}
 		]
 	},
-
 	// Global CSS: https://go.nuxtjs.dev/config-css
 	css: [],
 
@@ -62,6 +83,9 @@ export default {
 
 	// PWA module configuration: https://go.nuxtjs.dev/pwa
 	pwa: {
+		icon: {
+			source: '~/static/icon.png'
+		},
 		manifest: {
 			lang: 'en'
 		}

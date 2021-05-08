@@ -1,67 +1,89 @@
 <template>
-	<div>
-		<v-row class="intro">
-			<IntroOne v-if="selectedIntro == 1" />
-			<IntroTwo v-if="selectedIntro == 2" />
-			<IntroThree v-if="selectedIntro == 3" />
-			<IntroFour v-if="selectedIntro == 4" />
-			<IntroFive v-if="selectedIntro == 5" />
-		</v-row>
-		<v-row class="mt-2">
-			<v-spacer />
-			<v-btn icon @click="selectedIntro = 1"
-				><v-icon>mdi-checkbox-blank-circle-outline</v-icon></v-btn
-			>
-			<v-btn icon @click="selectedIntro = 2"
-				><v-icon>mdi-checkbox-blank-circle-outline</v-icon></v-btn
-			>
-			<v-btn icon @click="selectedIntro = 3"
-				><v-icon>mdi-checkbox-blank-circle-outline</v-icon></v-btn
-			>
-			<v-btn icon @click="selectedIntro = 4"
-				><v-icon>mdi-checkbox-blank-circle-outline</v-icon></v-btn
-			>
-			<v-btn icon @click="selectedIntro = 5"
-				><v-icon>mdi-checkbox-blank-circle-outline</v-icon></v-btn
-			>
-			<v-spacer />
-		</v-row>
-	</div>
+	<v-container fluid class="mb-10">
+		<div class="main-container">
+			<v-row>
+				<v-col :class="isSmallScreen ? 'col-md-12' : 'col-md-2'">
+					<SideIntro />
+				</v-col>
+				<v-col :class="isSmallScreen ? 'col-md-12' : 'col-md-10'">
+					<v-card class="pa-3 mt-3">
+						<div class="row">
+							<Education />
+
+							<WorkExperience />
+						</div>
+
+						<Skills />
+
+						<Publications />
+
+						<Awards />
+					</v-card>
+				</v-col>
+			</v-row>
+		</div>
+	</v-container>
 </template>
 
 <script>
-import IntroOne from '../components/MainPage/IntroOne'
-import IntroTwo from '../components/MainPage/IntroTwo'
-import IntroThree from '../components/MainPage/IntroThree'
-import IntroFour from '../components/MainPage/IntroFour'
-import IntroFive from '../components/MainPage/IntroFive'
+import SideIntro from '../components/SideIntro'
+import Education from '../components/Education'
+import WorkExperience from '../components/WorkExperience'
+import Skills from '../components/Skills'
+import Publications from '../components/Publications'
+import Awards from '../components/Awards'
 
 export default {
-	components: { IntroOne, IntroTwo, IntroThree, IntroFour, IntroFive },
+	components: {
+		SideIntro,
+		Education,
+		WorkExperience,
+		Skills,
+		Publications,
+		Awards
+	},
 	data() {
 		return {
-			interval: undefined,
-			selectedIntro: 1
+			components: ['Intro', 'Education', 'WorkEx', 'Skills', 'Publications', 'Awards'],
+			isSmallScreen: null,
+			activeComponent: 'Intro'
 		}
 	},
-	created() {
-		this.interval = setInterval(this.changeIntro, 20000)
-	},
-	methods: {
-		changeIntro() {
-			if (this.selectedIntro < 5) {
-				this.selectedIntro += 1
-			} else {
-				this.selectedIntro = 1
-			}
-		}
+	mounted() {
+		this.isSmallScreen = window.innerWidth < 868
 	}
 }
 </script>
 
 <style lang="scss" scoped>
-.intro {
-	padding-top: 7%;
-	height: 90vh;
+.main-container {
+	width: 100%;
+	overflow: hidden;
+}
+.subheader-item {
+	list-style: none;
+}
+.subheader-list {
+	width: 100%;
+	justify-content: space-evenly;
+	// margin: auto;
+}
+.item-btn {
+	font-size: 12px;
+	width: 100px;
+}
+</style>
+
+<style lang="scss">
+.desktop-header {
+	font-family: 'Farro', sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.0125em;
+	line-height: 2rem;
+	font-size: 24px;
+}
+.mobile-header {
+	font-family: 'Farro', sans-serif;
+	font-size: 16px;
 }
 </style>
