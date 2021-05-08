@@ -1,13 +1,13 @@
 <template>
 	<div>
-		<h2
+		<p
 			:class="[
 				'publication-header pa-3 mt-3',
 				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
 			]"
 		>
 			PUBLICATIONS
-		</h2>
+		</p>
 		<li
 			v-for="publication in publications"
 			:key="publication"

@@ -5,8 +5,12 @@
 				<v-img :src="require('../assets/images/my-photo.jpeg')" class="image" />
 			</v-avatar>
 		</v-row>
-		<v-card-title class="justify-center" style="word-break: break-word"
-			>Introduction</v-card-title
+		<v-card-title
+			:class="[
+				'intro-header justify-center',
+				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
+			]"
+			>INTRODUCTION</v-card-title
 		>
 		<v-card-text
 			style="font-family: 'Montserrat', sans-serif"
@@ -29,7 +33,7 @@ export default {
 		return {
 			finalContent: '',
 			whoAmI:
-				"<p>Hi, I'm Shayan. Trying to make the society a better place through technology, currently based in 📍Dallas,TX. Alumna 🎓 of <em>The University of Texas at Dallas</em> and <em>University of Pune</em>. Intrigued by sports, traveling, great food, strategy, finance, history and even better conversations. Seeking to be inspired, to envision the unlikely, to work hard for things that are worth it, and to be surrounded by those who bring out the best in me.</p>",
+				"<p>Hi, I'm Shayan. Trying to make the society a better place through technology, currently based in 📍Dallas,TX. Alumna 🎓 of <em>The University of Texas at Dallas</em> and <em>University of Pune</em>. Intrigued by sports, travelling, great food, strategy, finance, history and even better conversations. Seeking to be inspired, to envision the unlikely, to work hard for things that are worth it, and to be surrounded by those who bring out the best in me.</p>",
 			icon: 1, //down,
 			isSmallScreen: false
 		}

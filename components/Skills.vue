@@ -1,13 +1,13 @@
 <template>
 	<div>
-		<h2
+		<p
 			:class="[
 				'skills-header pa-3 mt-3',
 				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
 			]"
 		>
 			SKILLS
-		</h2>
+		</p>
 		<div class="row skill-line">
 			<li v-for="skill in skills" :key="skill" class="skill-list">
 				<div

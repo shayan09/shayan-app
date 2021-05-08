@@ -5,14 +5,14 @@
 			{ 'col-md-12': isSmallScreen, 'col-md-3': !isSmallScreen }
 		]"
 	>
-		<h2
+		<p
 			:class="[
 				'education-header pa-3 mt-3',
 				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
 			]"
 		>
 			EDUCATION
-		</h2>
+		</p>
 		<ul>
 			<li v-for="edu in education" :key="edu.title" class="education-list">
 				<div class="mt-2 education-item">

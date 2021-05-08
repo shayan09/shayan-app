@@ -6,7 +6,7 @@
 					<SideIntro />
 				</v-col>
 				<v-col :class="isSmallScreen ? 'col-md-12' : 'col-md-10'">
-					<v-card>
+					<v-card class="pa-3 mt-3">
 						<div class="row">
 							<Education />
 
@@ -75,9 +75,11 @@ export default {
 
 <style lang="scss">
 .desktop-header {
+	font-family: 'Farro', sans-serif;
 	font-size: 24px;
 }
 .mobile-header {
+	font-family: 'Farro', sans-serif;
 	font-size: 16px;
 }
 </style>

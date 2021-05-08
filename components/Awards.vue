@@ -1,13 +1,13 @@
 <template>
 	<div>
-		<h2
+		<p
 			:class="[
 				'award-header pa-3 mt-3',
 				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
 			]"
 		>
 			AWARDS
-		</h2>
+		</p>
 		<ul>
 			<li v-for="award in awards" :key="award" class="award-list row">
 				{{ award.title }} &#183;

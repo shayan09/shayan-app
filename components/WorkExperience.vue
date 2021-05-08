@@ -5,14 +5,14 @@
 			{ 'col-md-12': isSmallScreen, 'col-md-9': !isSmallScreen }
 		]"
 	>
-		<h2
+		<p
 			:class="[
 				'work-header pa-3 mt-3',
 				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
 			]"
 		>
 			WORK EXPERIENCE
-		</h2>
+		</p>
 		<ul class="work-list row">
 			<li
 				v-for="work in workExperience"
