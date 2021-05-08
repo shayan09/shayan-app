@@ -34,7 +34,6 @@ export default {
 			}
 		],
 		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 			{
 				rel: 'stylesheet',
 				href: 'https://fonts.googleapis.com/css?family=Crimson+Pro'
@@ -54,7 +53,6 @@ export default {
 			}
 		]
 	},
-
 	// Global CSS: https://go.nuxtjs.dev/config-css
 	css: [],
 
@@ -85,6 +83,9 @@ export default {
 
 	// PWA module configuration: https://go.nuxtjs.dev/pwa
 	pwa: {
+		icon: {
+			source: '~/static/icon.png'
+		},
 		manifest: {
 			lang: 'en'
 		}
