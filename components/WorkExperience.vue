@@ -31,7 +31,12 @@
 					<v-card-title class="justify-center mt-1"> {{ work.title }} </v-card-title>
 					<v-card-text>
 						<v-row class="roles-list justify-center">
-							<v-chip v-for="role in work.role" :key="role" class="pa-2">
+							<v-chip
+								v-for="role in work.role"
+								:key="role"
+								class="position-chip pa-2 ma-2"
+								color="#1BA464"
+							>
 								{{ role }}
 							</v-chip>
 						</v-row>
@@ -102,6 +107,12 @@ export default {
 }
 .work-header {
 	text-align: center;
+}
+.work-description {
+	text-align: justify;
+}
+.position-chip {
+	color: white;
 }
 .work-list {
 	// width: 100%;
