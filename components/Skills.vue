@@ -11,7 +11,7 @@
 		<div class="row skill-line">
 			<li v-for="skill in skills" :key="skill" class="skill-list">
 				<div
-					class="icon"
+					:class="isSmallScreen ? 'small-icon' : 'icon'"
 					:style="{
 						'background-image': 'url(' + require(`../assets/logos/${skill}`) + ')'
 					}"
@@ -58,6 +58,14 @@ export default {
 	display: inline-block;
 	width: 120px;
 	height: 120px;
+	background-position: 50% 50%;
+	background-size: cover;
+	border-radius: 30%;
+}
+.small-icon {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
 	background-position: 50% 50%;
 	background-size: cover;
 	border-radius: 30%;

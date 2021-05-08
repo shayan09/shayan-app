@@ -76,6 +76,9 @@ export default {
 <style lang="scss">
 .desktop-header {
 	font-family: 'Farro', sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.0125em;
+	line-height: 2rem;
 	font-size: 24px;
 }
 .mobile-header {
