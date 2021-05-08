@@ -1,6 +1,13 @@
 <template>
 	<div>
-		<h2 class="about-header pa-3 mt-3">SKILLS</h2>
+		<h2
+			:class="[
+				'skills-header pa-3 mt-3',
+				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
+			]"
+		>
+			SKILLS
+		</h2>
 		<div class="row skill-line">
 			<li v-for="skill in skills" :key="skill" class="skill-list">
 				<div
@@ -27,13 +34,20 @@ export default {
 				'docker.png',
 				'ml.png',
 				'redis.png'
-			]
+			],
+			isSmallScreen: null
 		}
+	},
+	mounted() {
+		this.isSmallScreen = window.innerWidth < 868
 	}
 }
 </script>
 
 <style lang="scss" scoped>
+.skills-header {
+	text-align: center;
+}
 .skill-line {
 	justify-content: space-evenly;
 }

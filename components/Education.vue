@@ -1,6 +1,18 @@
 <template>
-	<div class="education-container">
-		<h2 class="education-header pa-3 mt-3">EDUCATION</h2>
+	<div
+		:class="[
+			'education-container',
+			{ 'col-md-12': isSmallScreen, 'col-md-3': !isSmallScreen }
+		]"
+	>
+		<h2
+			:class="[
+				'education-header pa-3 mt-3',
+				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
+			]"
+		>
+			EDUCATION
+		</h2>
 		<ul>
 			<li v-for="edu in education" :key="edu.title" class="education-list">
 				<div class="mt-2 education-item">
@@ -76,7 +88,7 @@ export default {
 
 <style lang="scss" scoped>
 .education-container {
-	font-size: 10px;
+	height: 100%;
 }
 .education-header {
 	text-align: center;

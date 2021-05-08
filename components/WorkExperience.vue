@@ -1,36 +1,51 @@
 <template>
-	<div class="work-container">
-		<h2 class="work-header pa-3 mt-3">WORK EXPERIENCE</h2>
-		<ul class="work-list">
-			<v-row class="work-container" cols="12">
-				<li v-for="work in workExperience" :key="work.title" style="width: 100%">
-					<v-card class="work-card text-center col-md-4" flat>
-						<div class="row">
-							<v-img
-								:src="require(`../assets/logos/${work.img}`)"
-								max-height="200px"
-								max-width="100%"
-							/>
-						</div>
-						<v-card-title class="justify-center mt-1"> {{ work.title }} </v-card-title>
-						<v-card-text>
-							<v-row class="roles-list justify-center">
-								<v-chip v-for="role in work.role" :key="role">
-									{{ role }}
-								</v-chip>
-							</v-row>
-							<v-row class="justify-center">
-								<p>
-									{{ work.location }} <i class="years"> {{ work.years[0] }} </i>
-								</p>
-								<span class="work-description">
-									{{ work.description[0] }}
-								</span>
-							</v-row>
-						</v-card-text>
-					</v-card>
-				</li>
-			</v-row>
+	<div
+		:class="[
+			'work-container',
+			{ 'col-md-12': isSmallScreen, 'col-md-9': !isSmallScreen }
+		]"
+	>
+		<h2
+			:class="[
+				'work-header pa-3 mt-3',
+				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
+			]"
+		>
+			WORK EXPERIENCE
+		</h2>
+		<ul class="work-list row">
+			<li
+				v-for="work in workExperience"
+				:key="work.title"
+				:class="isSmallScreen ? 'col-md-12' : 'col-md-4'"
+			>
+				<v-card class="work-card text-center" flat>
+					<div class="row">
+						<v-img
+							class="ml-0"
+							:src="require(`../assets/logos/${work.img}`)"
+							max-height="200px"
+							width="100%"
+						/>
+					</div>
+					<v-card-title class="justify-center mt-1"> {{ work.title }} </v-card-title>
+					<v-card-text>
+						<v-row class="roles-list justify-center">
+							<v-chip v-for="role in work.role" :key="role" class="pa-2">
+								{{ role }}
+							</v-chip>
+						</v-row>
+						<v-row class="justify-center mt-4">
+							<p>
+								{{ work.location }} <i class="years"> {{ work.years[0] }} </i>
+							</p>
+							<span class="work-description">
+								{{ work.description[0] }}
+							</span>
+						</v-row>
+					</v-card-text>
+				</v-card>
+			</li>
 		</ul>
 	</div>
 </template>
@@ -71,24 +86,26 @@ export default {
 					img: 'spectra.png',
 					years: ['May 2017 - July 2017']
 				}
-			]
+			],
+			isSmallScreen: null
 		}
+	},
+	mounted() {
+		this.isSmallScreen = window.innerWidth < 868
 	}
 }
 </script>
 
 <style lang="scss" scoped>
 .work-container {
-	width: 100%;
 	height: 100%;
-	font-size: 10px;
 }
 .work-header {
 	text-align: center;
 }
 .work-list {
-	width: 100%;
-	height: 100%;
+	// width: 100%;
+	// height: 100%;
 	list-style: none;
 }
 .years {

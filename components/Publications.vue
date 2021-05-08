@@ -1,6 +1,13 @@
 <template>
 	<div>
-		<h2 class="about-header pa-3 mt-3">PUBLICATIONS</h2>
+		<h2
+			:class="[
+				'publication-header pa-3 mt-3',
+				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
+			]"
+		>
+			PUBLICATIONS
+		</h2>
 		<li
 			v-for="publication in publications"
 			:key="publication"
@@ -23,13 +30,20 @@ export default {
 		return {
 			publications: [
 				'LipVision: A Deep Learning Approach - International Journal of Computer Applications'
-			]
+			],
+			isSmallScreen: null
 		}
+	},
+	mounted() {
+		this.isSmallScreen = window.innerWidth < 868
 	}
 }
 </script>
 
 <style lang="scss" scoped>
+.publication-header {
+	text-align: center;
+}
 .publication-list {
 	list-style: none;
 }

@@ -1,6 +1,13 @@
 <template>
 	<div>
-		<h2 class="about-header pa-3 mt-3">AWARDS</h2>
+		<h2
+			:class="[
+				'award-header pa-3 mt-3',
+				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
+			]"
+		>
+			AWARDS
+		</h2>
 		<ul>
 			<li v-for="award in awards" :key="award" class="award-list row">
 				{{ award.title }} &#183;
@@ -39,13 +46,20 @@ export default {
 					title: 'Best Basketball Player',
 					year: 2010
 				}
-			]
+			],
+			isSmallScreen: null
 		}
+	},
+	mounted() {
+		this.isSmallScreen = window.innerWidth < 868
 	}
 }
 </script>
 
 <style lang="scss" scoped>
+.award-header {
+	text-align: center;
+}
 .award-list {
 	list-style: none;
 }
