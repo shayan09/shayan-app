@@ -2,7 +2,7 @@
 	<div>
 		<p
 			:class="[
-				'publication-header pa-3 mt-3',
+				'publication-header pa-1 mt-3',
 				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
 			]"
 		>

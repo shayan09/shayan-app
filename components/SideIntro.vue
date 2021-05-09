@@ -7,12 +7,13 @@
 		</v-row>
 		<v-card-title
 			:class="[
-				'intro-header justify-center',
+				'intro-header justify-center pa-1',
 				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
 			]"
 			>INTRODUCTION</v-card-title
 		>
 		<v-card-text
+			class="mt-4"
 			style="font-family: 'Montserrat', sans-serif"
 			v-html="finalContent"
 		></v-card-text>

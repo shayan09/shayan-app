@@ -7,7 +7,7 @@
 	>
 		<p
 			:class="[
-				'work-header pa-3 mt-3',
+				'work-header pa-1 mt-3',
 				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
 			]"
 		>
@@ -33,8 +33,10 @@
 							<v-chip
 								v-for="role in work.role"
 								:key="role"
-								class="position-chip pa-2 ma-2"
-								color="#1BA464"
+								class="pa-2 ma-2"
+								color="cyan"
+								small
+								text-color="white"
 							>
 								{{ role }}
 							</v-chip>
@@ -109,9 +111,6 @@ export default {
 }
 .work-description {
 	text-align: justify;
-}
-.position-chip {
-	color: white;
 }
 .work-list {
 	list-style: none;

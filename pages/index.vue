@@ -81,9 +81,15 @@ export default {
 	letter-spacing: 0.0125em;
 	line-height: 2rem;
 	font-size: 24px;
+	border: 1px;
+	background-color: #1ba464;
+	color: white;
 }
 .mobile-header {
 	font-family: 'Farro', sans-serif;
 	font-size: 16px;
+	border: 1px;
+	background-color: #1ba464;
+	color: white;
 }
 </style>

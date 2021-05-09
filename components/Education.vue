@@ -7,13 +7,13 @@
 	>
 		<p
 			:class="[
-				'education-header pa-3 mt-3',
+				'education-header pa-1 mt-3',
 				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
 			]"
 		>
 			EDUCATION
 		</p>
-		<ul>
+		<ul class="px-0">
 			<li v-for="edu in education" :key="edu.title" class="education-list">
 				<div class="mt-2 education-item">
 					<div class="row my-2">

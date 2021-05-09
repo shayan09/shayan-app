@@ -2,7 +2,7 @@
 	<div>
 		<p
 			:class="[
-				'skills-header pa-3 mt-3',
+				'skills-header pa-1 mt-3',
 				{ 'mobile-header': isSmallScreen, 'desktop-header': !isSmallScreen }
 			]"
 		>
