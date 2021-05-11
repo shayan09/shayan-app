@@ -20,13 +20,9 @@
 				:class="isSmallScreen ? 'col-md-12' : 'col-md-4'"
 			>
 				<v-card class="work-card text-center" flat>
-					<div class="row justify-center">
-						<v-img
-							class="ml-0"
-							:src="require(`../assets/logos/${work.img}`)"
-							max-height="200px"
-						/>
-					</div>
+					<v-avatar rounded size="128">
+						<v-img :src="require(`../assets/logos/${work.img}`)" />
+					</v-avatar>
 					<v-card-title class="justify-center mt-1"> {{ work.title }} </v-card-title>
 					<v-card-text>
 						<v-row class="roles-list justify-center">
@@ -53,6 +49,16 @@
 				</v-card>
 			</li>
 		</ul>
+		<v-row class="skill-line mt-5">
+			<li v-for="skill in skills" :key="skill" class="skill-list">
+				<div
+					:class="isSmallScreen ? 'small-icon' : 'icon'"
+					:style="{
+						'background-image': 'url(' + require(`../assets/logos/${skill}`) + ')'
+					}"
+				/>
+			</li>
+		</v-row>
 	</div>
 </template>
 
@@ -93,6 +99,15 @@ export default {
 					years: ['May 2017 - July 2017']
 				}
 			],
+			skills: [
+				'node.png',
+				'python.png',
+				'vue.png',
+				'sql.png',
+				'docker.png',
+				'ml.png',
+				'redis.png'
+			],
 			isSmallScreen: null
 		}
 	},
@@ -122,5 +137,28 @@ export default {
 	width: 100%;
 	height: 100%;
 	padding: 10px;
+}
+.skill-line {
+	margin: auto;
+	justify-content: space-evenly;
+}
+.skill-list {
+	list-style: none;
+}
+.icon {
+	display: inline-block;
+	width: 120px;
+	height: 120px;
+	background-position: 50% 50%;
+	background-size: cover;
+	border-radius: 30%;
+}
+.small-icon {
+	display: inline-block;
+	width: 45px;
+	height: 45px;
+	background-position: 50% 50%;
+	background-size: cover;
+	border-radius: 30%;
 }
 </style>

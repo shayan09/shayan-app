@@ -13,8 +13,6 @@
 							<WorkExperience />
 						</div>
 
-						<Skills />
-
 						<Publications />
 
 						<Awards />
@@ -29,7 +27,6 @@
 import SideIntro from '../components/SideIntro'
 import Education from '../components/Education'
 import WorkExperience from '../components/WorkExperience'
-import Skills from '../components/Skills'
 import Publications from '../components/Publications'
 import Awards from '../components/Awards'
 
@@ -38,15 +35,12 @@ export default {
 		SideIntro,
 		Education,
 		WorkExperience,
-		Skills,
 		Publications,
 		Awards
 	},
 	data() {
 		return {
-			components: ['Intro', 'Education', 'WorkEx', 'Skills', 'Publications', 'Awards'],
-			isSmallScreen: null,
-			activeComponent: 'Intro'
+			isSmallScreen: null
 		}
 	},
 	mounted() {
@@ -82,14 +76,14 @@ export default {
 	line-height: 2rem;
 	font-size: 24px;
 	border: 1px;
-	background-color: #1ba464;
+	background-color: #596678;
 	color: white;
 }
 .mobile-header {
 	font-family: 'Farro', sans-serif;
 	font-size: 16px;
 	border: 1px;
-	background-color: #1ba464;
+	background-color: #596678;
 	color: white;
 }
 </style>
