@@ -1,5 +1,4 @@
 const nodemailer = require('nodemailer')
-const { username, password } = require('../../config/mailer.config')
 
 module.exports.sendMail = async function (req, res) {
 	const { name, email, message } = req.body
@@ -11,8 +10,8 @@ module.exports.sendMail = async function (req, res) {
 		secure: false,
 		requireTLS: true,
 		auth: {
-			user: username,
-			pass: password
+			user: process.env.username,
+			pass: process.env.password
 		}
 	})
 
