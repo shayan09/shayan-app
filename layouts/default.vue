@@ -6,6 +6,7 @@
 			elevate-on-scroll
 			light
 			color="#2F61A5"
+			app
 		>
 			<v-spacer></v-spacer>
 
@@ -24,11 +25,15 @@
 				<v-icon>mdi-book</v-icon>
 			</v-btn>
 
-			<v-btn icon dark>
+			<v-btn icon dark to="/contact">
 				<v-icon>mdi-email</v-icon>
 			</v-btn>
 		</v-app-bar>
-		<nuxt />
+
+		<v-main>
+			<nuxt />
+		</v-main>
+
 		<v-footer
 			class="footer font-weight-medium"
 			absolute
