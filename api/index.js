@@ -6,6 +6,7 @@ const app = express()
 
 // Secure app by setting HTTP headers
 app.use(helmet())
+app.use(helmet({ crossOriginResourcePolicy: { policy: 'same-site' } }))
 
 // Init body-parser options (inbuilt with express)
 app.use(express.json())
