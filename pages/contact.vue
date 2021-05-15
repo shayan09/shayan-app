@@ -22,13 +22,13 @@
 				required
 			></v-text-field>
 
-			<v-textarea v-model="bio" color="teal">
+			<v-textarea v-model="message" color="teal">
 				<template #label>
 					<div>Message <small>(optional)</small></div>
 				</template>
 			</v-textarea>
 
-			<v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
+			<v-btn :disabled="!valid" color="success" class="mr-4" @click="submit">
 				Submit
 			</v-btn>
 
@@ -47,7 +47,7 @@ export default {
 			(v) => (v && v.length <= 20) || 'Name must be less than 20 characters'
 		],
 		email: '',
-		bio: '',
+		message: '',
 		emailRules: [
 			(v) => !!v || 'E-mail is required',
 			(v) => /.+@.+\..+/.test(v) || 'E-mail must be valid'
@@ -55,8 +55,18 @@ export default {
 	}),
 
 	methods: {
-		validate() {
-			this.$refs.form.validate()
+		submit() {
+			if (this.$refs.form.validate()) {
+				const formData = {
+					name: this.name,
+					email: this.email,
+					message: this.message
+				}
+				this.$axios
+					.post('/api/sendMail', formData)
+					.then((response) => console.log(response))
+					.catch((error) => console.error(error))
+			}
 		},
 		reset() {
 			this.$refs.form.reset()
