@@ -1,12 +1,13 @@
 const express = require('express')
 const helmet = require('helmet')
+const cors = require('cors')
 
 // Create express instnace
 const app = express()
 
 // Secure app by setting HTTP headers
 app.use(helmet())
-app.use(helmet({ crossOriginResourcePolicy: { policy: 'same-site' } }))
+app.use(cors())
 
 // Init body-parser options (inbuilt with express)
 app.use(express.json())
