@@ -30,9 +30,9 @@
 			</v-btn>
 		</v-app-bar>
 
-		<v-content>
+		<v-main>
 			<nuxt />
-		</v-content>
+		</v-main>
 
 		<v-footer
 			class="footer font-weight-medium"
