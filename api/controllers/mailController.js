@@ -33,7 +33,7 @@ module.exports.sendMail = async function (req, res) {
 			transporter.sendMail({
 				from: 'samsimmons9308@gmail.com',
 				to: email,
-				subject: 'Hello Friend - Shayan',
+				subject: 'Hello there!',
 				html: `
 			<p>
 			Thank you for getting in touch. Will get back shortly!

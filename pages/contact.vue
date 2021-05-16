@@ -2,10 +2,12 @@
 	<v-container fluid class="contact-container mb-10">
 		<v-form ref="form" v-model="valid" lazy-validation>
 			<v-row class="contact-title text-center mb-3">
-				<v-btn class="back-button ml-2 pa-2" to="/">
+				<v-btn class="back-button ml-2 mt-3 pa-2" to="/" :small="isSmallScreen">
 					<v-icon color="black"> mdi-arrow-left </v-icon>
 				</v-btn>
-				<h1 class="contact-header pa-4">Get In Touch</h1>
+				<h1 class="contact-header pa-4" :style="isSmallScreen ? 'font-size: 20px' : ''">
+					Get In Touch
+				</h1>
 			</v-row>
 			<v-text-field
 				v-model="name"
@@ -28,35 +30,64 @@
 				</template>
 			</v-textarea>
 
-			<v-btn :disabled="!valid" color="success" class="mr-4" @click="submit">
-				Submit
-			</v-btn>
+			<v-row class="form-buttons">
+				<v-btn
+					:disabled="!valid"
+					color="success"
+					class="mr-4 mt-2"
+					:small="isSmallScreen"
+					@click="submit"
+				>
+					Submit
+				</v-btn>
 
-			<v-btn color="error" class="mr-4" @click="reset"> Reset </v-btn>
+				<v-btn color="error" class="mr-4 mt-2" :small="isSmallScreen" @click="reset">
+					Reset
+				</v-btn>
+			</v-row>
 		</v-form>
+		<v-dialog v-model="mailSent" :max-width="isSmallScreen ? '250px' : '400px'">
+			<v-card class="justify-center text-center">
+				<v-card-title class="popup-title" style="text-align: center">
+					Thank you {{ savedName }}
+				</v-card-title>
+				<v-img max-width="200px" :src="require('../assets/success.png')" />
+				<v-card-text style="text-align: center; padding: 10px 0px 60px 0px"
+					>Your message has been sent successfully!</v-card-text
+				>
+			</v-card>
+		</v-dialog>
 	</v-container>
 </template>
 
 <script>
 export default {
-	data: () => ({
-		valid: true,
-		name: '',
-		nameRules: [
-			(v) => !!v || 'Name is required',
-			(v) => (v && v.length <= 20) || 'Name must be less than 20 characters'
-		],
-		email: '',
-		message: '',
-		emailRules: [
-			(v) => !!v || 'E-mail is required',
-			(v) => /.+@.+\..+/.test(v) || 'E-mail must be valid'
-		]
-	}),
-
+	data() {
+		return {
+			valid: true,
+			name: '',
+			savedName: '',
+			nameRules: [
+				(v) => !!v || 'Name is required',
+				(v) => (v && v.length <= 20) || 'Name must be less than 20 characters'
+			],
+			email: '',
+			message: '',
+			emailRules: [
+				(v) => !!v || 'E-mail is required',
+				(v) => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+			],
+			isSmallScreen: null,
+			mailSent: false
+		}
+	},
+	mounted() {
+		this.isSmallScreen = window.innerWidth < 868
+	},
 	methods: {
 		submit() {
 			if (this.$refs.form.validate()) {
+				this.savedName = this.name.split(' ')[0]
 				const formData = {
 					name: this.name,
 					email: this.email,
@@ -64,7 +95,10 @@ export default {
 				}
 				this.$axios
 					.post('/api/sendMail', formData)
-					.then((response) => console.log(response))
+					.then(() => {
+						this.mailSent = true
+						this.$refs.form.reset()
+					})
 					.catch((error) => console.error(error))
 			}
 		},
@@ -99,5 +133,14 @@ export default {
 }
 .back-button {
 	margin-block: auto;
+}
+.form-buttons {
+	justify-content: center;
+}
+.v-image {
+	margin: auto;
+}
+.popup-title {
+	word-break: break-word;
 }
 </style>
