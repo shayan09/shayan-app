@@ -1,13 +1,20 @@
 <template>
-	<v-container fluid class="contact-container mb-10">
+	<v-container
+		fluid
+		class="contact-container mb-10"
+		:style="isSmallScreen ? 'width: 100%' : 'width: 50%'"
+	>
 		<v-form ref="form" v-model="valid" lazy-validation>
 			<v-row class="contact-title text-center mb-3">
 				<v-btn class="back-button ml-2 mt-3 pa-2" to="/" :small="isSmallScreen">
 					<v-icon color="black"> mdi-arrow-left </v-icon>
 				</v-btn>
-				<h1 class="contact-header pa-4" :style="isSmallScreen ? 'font-size: 20px' : ''">
+				<span
+					class="contact-header pa-4"
+					:style="isSmallScreen ? 'font-size: 20px' : 'font-size: 30px'"
+				>
 					Get In Touch
-				</h1>
+				</span>
 			</v-row>
 			<v-text-field
 				v-model="name"
@@ -115,7 +122,6 @@ export default {
 .contact-container {
 	background-color: white;
 	height: 100%;
-	width: 50%;
 }
 .v-form {
 	padding: 10px;
