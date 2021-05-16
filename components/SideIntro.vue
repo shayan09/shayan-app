@@ -60,7 +60,4 @@ export default {
 .v-icon {
 	text-decoration: none;
 }
-.image {
-	// border-radius: 50% 50%;
-}
 </style>

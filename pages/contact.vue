@@ -32,10 +32,11 @@
 
 			<v-row class="form-buttons">
 				<v-btn
-					:disabled="!valid"
+					:disabled="!valid || submitted"
 					color="success"
 					class="mr-4 mt-2"
 					:small="isSmallScreen"
+					:loading="submitted"
 					@click="submit"
 				>
 					Submit
@@ -76,7 +77,8 @@ export default {
 				(v) => /.+@.+\..+/.test(v) || 'E-mail must be valid'
 			],
 			isSmallScreen: null,
-			mailSent: false
+			mailSent: false,
+			submitted: false
 		}
 	},
 	mounted() {
@@ -85,6 +87,7 @@ export default {
 	methods: {
 		submit() {
 			if (this.$refs.form.validate()) {
+				this.submitted = true
 				this.savedName = this.name.split(' ')[0]
 				const formData = {
 					name: this.name,
@@ -95,6 +98,7 @@ export default {
 					.post('/api/sendMail', formData)
 					.then(() => {
 						this.mailSent = true
+						this.submitted = false
 						this.$refs.form.reset()
 					})
 					.catch((error) => console.error(error))
