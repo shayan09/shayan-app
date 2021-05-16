@@ -48,12 +48,10 @@
 		</v-form>
 		<v-dialog v-model="mailSent" :max-width="isSmallScreen ? '250px' : '400px'">
 			<v-card class="justify-center text-center">
-				<v-card-title class="popup-title" style="text-align: center">
-					Thank you {{ savedName }}
-				</v-card-title>
+				<v-card-title class="popup-title"> Thank you {{ savedName }}! </v-card-title>
 				<v-img max-width="200px" :src="require('../assets/success.png')" />
-				<v-card-text style="text-align: center; padding: 10px 0px 60px 0px"
-					>Your message has been sent successfully!</v-card-text
+				<v-card-text class="mt-2" style="text-align: center"
+					>Your message has been sent successfully</v-card-text
 				>
 			</v-card>
 		</v-dialog>
@@ -142,5 +140,6 @@ export default {
 }
 .popup-title {
 	word-break: break-word;
+	justify-content: center;
 }
 </style>
