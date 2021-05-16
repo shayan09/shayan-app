@@ -1,5 +1,9 @@
 <template>
-	<v-container fluid class="contact-container mb-10">
+	<v-container
+		fluid
+		class="contact-container mb-10"
+		:style="isSmallScreen ? 'width: 100%' : 'width: 50%'"
+	>
 		<v-form ref="form" v-model="valid" lazy-validation>
 			<v-row class="contact-title text-center mb-3">
 				<v-btn class="back-button ml-2 mt-3 pa-2" to="/" :small="isSmallScreen">
@@ -115,7 +119,6 @@ export default {
 .contact-container {
 	background-color: white;
 	height: 100%;
-	width: 50%;
 }
 .v-form {
 	padding: 10px;
