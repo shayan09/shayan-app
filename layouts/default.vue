@@ -17,17 +17,32 @@
 			>
 			<v-spacer></v-spacer>
 
-			<v-btn icon dark>
-				<v-icon>mdi-camera</v-icon>
-			</v-btn>
+			<v-tooltip bottom>
+				<template #activator="{ on, attrs }">
+					<v-btn icon dark v-bind="attrs" v-on="on">
+						<v-icon>mdi-camera</v-icon>
+					</v-btn>
+				</template>
+				<span>Gallery</span>
+			</v-tooltip>
 
-			<v-btn icon dark>
-				<v-icon>mdi-book</v-icon>
-			</v-btn>
+			<v-tooltip bottom>
+				<template #activator="{ on, attrs }">
+					<v-btn icon dark v-bind="attrs" v-on="on">
+						<v-icon>mdi-book</v-icon>
+					</v-btn>
+				</template>
+				<span>Blogs</span>
+			</v-tooltip>
 
-			<v-btn icon dark to="/contact">
-				<v-icon>mdi-email</v-icon>
-			</v-btn>
+			<v-tooltip bottom>
+				<template #activator="{ on, attrs }">
+					<v-btn icon dark v-bind="attrs" to="/contact" v-on="on">
+						<v-icon>mdi-email</v-icon>
+					</v-btn>
+				</template>
+				<span>Contact</span>
+			</v-tooltip>
 		</v-app-bar>
 
 		<v-main>
@@ -37,16 +52,16 @@
 		<v-footer
 			class="footer font-weight-medium"
 			absolute
-			style="background-color: #596678"
+			style="background-color: transparent"
 		>
 			<v-btn icon absolute style="bottom: 0; right: 0" @click="showFooter = !showFooter"
 				><v-icon color="white"> mdi-information-outline</v-icon></v-btn
 			>
 			<v-col v-if="showFooter" cols="12">
-				<v-row class="justify-center" style="color: white">
-					{{ new Date().getFullYear() }}&#169; <strong>Made with ❤️</strong>
-				</v-row>
-				<v-row class="justify-center color--white">
+				<v-row class="justify-center">
+					<span class="footer-text"
+						>{{ new Date().getFullYear() }}&#169; <strong>Made with ❤️</strong></span
+					>
 					<v-btn href="https://github.com/shayan09" target="_blank" color="white" icon
 						><v-icon> mdi-github</v-icon></v-btn
 					>
@@ -92,5 +107,9 @@ export default {
 	font-family: 'Crimson Pro', serif;
 	font-weight: bold;
 	font-size: 30px;
+}
+.footer-text {
+	color: white;
+	margin: auto 0px;
 }
 </style>
