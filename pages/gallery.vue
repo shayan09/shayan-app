@@ -19,10 +19,10 @@ export default {
 	data() {
 		return {
 			pictures: [
-				'carlsbad-caverns-national-park-new-mexico-min.jpg',
-				'nasa-space-center-houston-min.jpg',
-				'palo-duro-canyon-state-park-min.jpg',
-				'white-sands-national-monument-new-mexico-min.jpg'
+				'carlsbad-caverns-national-park.jpg',
+				'nasa-space-center.jpg',
+				'palo-duro-canyon-state-park.jpg',
+				'white-sands-national-monument.jpg'
 			],
 			currentPicture: 'click-me.gif',
 			isSmallScreen: false
