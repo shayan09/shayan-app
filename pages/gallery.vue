@@ -8,6 +8,8 @@
 			class="mt-5"
 			transition="scale-transition"
 			max-width="800px"
+			max-height="800px"
+			contain
 			:src="require(`../assets/gallery/${currentPicture}`)"
 			@click="getRandomPicture"
 		/>
@@ -19,10 +21,22 @@ export default {
 	data() {
 		return {
 			pictures: [
-				'carlsbad-caverns-national-park-new-mexico-min.jpg',
-				'nasa-space-center-houston-min.jpg',
-				'palo-duro-canyon-state-park-min.jpg',
-				'white-sands-national-monument-new-mexico-min.jpg'
+				'carlsbad-caverns-national-park.jpg',
+				'dart-dallas.jpg',
+				'goa-port.jpg',
+				'grand-canyon.jpg',
+				'hampi-ruins.jpg',
+				'kedarkantha-view-gloomy.jpg',
+				'mavs-nba.jpg',
+				'nasa-space-center.jpg',
+				'palo-duro-canyon-state-park.jpg',
+				'san-antonio-river-walk.jpg',
+				'san-diego-house.jpg',
+				'san-diego-sunset.jpg',
+				'texas-capitol.jpg',
+				'top-of-the-rock-ny.jpg',
+				'uttrakhand-pass.jpg',
+				'white-sands-national-monument.jpg'
 			],
 			currentPicture: 'click-me.gif',
 			isSmallScreen: false
