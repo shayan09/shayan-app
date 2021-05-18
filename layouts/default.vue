@@ -19,15 +19,6 @@
 
 			<v-tooltip bottom>
 				<template #activator="{ on, attrs }">
-					<v-btn icon dark v-bind="attrs" to="/gallery" v-on="on">
-						<v-icon>mdi-camera</v-icon>
-					</v-btn>
-				</template>
-				<span>Gallery</span>
-			</v-tooltip>
-
-			<v-tooltip bottom>
-				<template #activator="{ on, attrs }">
 					<v-btn icon dark v-bind="attrs" v-on="on">
 						<v-icon>mdi-book</v-icon>
 					</v-btn>
