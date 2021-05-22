@@ -13,25 +13,31 @@
 			>INTRODUCTION</v-card-title
 		>
 		<v-card-text class="mt-4" style="font-family: 'Montserrat', sans-serif">
-			<span>
-				<p>
-					Hi, I'm Shayan. Trying to make the society a better place through technology,
-					currently based in 📍Dallas,TX. Alumnus 🎓 of
-					<em>The University of Texas at Dallas</em> and <em>University of Pune</em>.
-					Intrigued by sports, travelling, great food, strategy, finance, history and even
-					better conversations. Seeking to be inspired, to envision the unlikely, to work
-					hard for things that are worth it, and to be surrounded by those who bring out
-					the best in me.
-				</p>
-				<p v-if="expandContent">
-					Thank you for your curosity to know more, but I don't have anything else at the
-					moment. Meanwhile, checkout some
-					<NuxtLink to="/gallery" style="font-weight: bold; letter-spacing: 3px"
-						>photos</NuxtLink
-					>
-					I clicked.
-				</p>
-			</span>
+			<p>
+				Hi, I'm Shayan Sadar
+				<v-btn x-small @click="playPronouncation">
+					<v-icon>mdi-volume-source</v-icon>
+					<audio
+						id="pronounciation"
+						:src="require('@/assets/audio/pronounce.mp3')"
+						hidden
+					></audio>
+				</v-btn>
+				Trying to make the society a better place through technology, currently based in
+				📍Dallas,TX. Alumnus 🎓 of <em>The University of Texas at Dallas</em> and
+				<em>University of Pune</em>. Intrigued by sports, travelling, great food,
+				strategy, finance, history and even better conversations. Seeking to be inspired,
+				to envision the unlikely, to work hard for things that are worth it, and to be
+				surrounded by those who bring out the best in me.
+			</p>
+			<p v-if="expandContent">
+				Thank you for your curosity to know more, but I don't have anything else at the
+				moment. Meanwhile, checkout some
+				<NuxtLink to="/gallery" style="font-weight: bold; letter-spacing: 3px"
+					>photos</NuxtLink
+				>
+				I clicked.
+			</p>
 		</v-card-text>
 		<v-card-actions>
 			<v-spacer></v-spacer>
@@ -57,6 +63,11 @@ export default {
 	mounted() {
 		this.finalContent = this.whoAmI
 		this.isSmallScreen = window.innerWidth < 868
+	},
+	methods: {
+		playPronouncation() {
+			document.getElementById('pronounciation').play()
+		}
 	}
 }
 </script>
