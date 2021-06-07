@@ -48,7 +48,7 @@ export default {
 			if (show)
 				this.finalContent =
 					this.whoAmI +
-					"<p>Thank you for your curosity to know more, but I don't have anything else at the moment. Meanwhile, checkout some <a href='http://shayansadar.com/gallery' style='font-weight: bold; letter-spacing: 3px;'>photos</a> I clicked.</p>"
+					"<p>Thank you for your curiosity to know more, but I don't have anything else at the moment. Meanwhile, check out some <a href='http://shayansadar.com/gallery' style='font-weight: bold; letter-spacing: 3px;'>photos</a> I clicked.</p>"
 			else this.finalContent = this.whoAmI
 			this.icon = !this.icon
 		}
