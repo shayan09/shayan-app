@@ -6,15 +6,17 @@
 					<SideIntro />
 				</v-col>
 				<v-col :class="isSmallScreen ? 'col-md-12' : 'col-md-10'">
-					<div class="row">
-						<Education />
+					<v-card class="pa-3 mt-3" flat>
+						<div class="row">
+							<Education />
 
-						<WorkExperience />
-					</div>
+							<WorkExperience />
+						</div>
 
-					<Publications />
+						<Publications />
 
-					<Awards />
+						<Awards />
+					</v-card>
 				</v-col>
 			</v-row>
 		</div>

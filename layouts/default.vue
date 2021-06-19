@@ -29,7 +29,7 @@
 			<v-spacer></v-spacer>
 			<v-app-bar-title
 				class="name-title"
-				:style="isSmallScreen ? 'font-size: 30px; margin:auto;' : 'font-size: 40px;'"
+				:style="isSmallScreen ? 'font-size: 28px; margin:auto;' : 'font-size: 40px;'"
 				>SHAYAN SADAR</v-app-bar-title
 			>
 			<v-spacer></v-spacer>
