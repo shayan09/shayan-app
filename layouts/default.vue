@@ -8,8 +8,32 @@
 			color="#2F61A5"
 			app
 		>
-			<v-spacer></v-spacer>
+			<v-tooltip bottom>
+				<template #activator="{ on, attrs }">
+					<v-btn
+						v-if="$vuetify.theme.dark"
+						icon
+						dark
+						v-bind="attrs"
+						v-on="on"
+						@click="$vuetify.theme.dark = !$vuetify.theme.dark"
+					>
+						<v-icon>mdi-white-balance-sunny</v-icon>
+					</v-btn>
+					<v-btn
+						v-else
+						icon
+						dark
+						v-bind="attrs"
+						v-on="on"
+						@click="$vuetify.theme.dark = !$vuetify.theme.dark"
+					>
+						<v-icon>mdi-weather-night</v-icon>
+					</v-btn>
+				</template>
+			</v-tooltip>
 
+			<v-spacer></v-spacer>
 			<v-app-bar-title
 				class="name-title"
 				:style="isSmallScreen ? 'font-size: 30px; margin:auto;' : 'font-size: 40px;'"

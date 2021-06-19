@@ -60,7 +60,6 @@ export default {
 
 <style lang="scss" scoped>
 .gallery-container {
-	background-color: white;
 	height: 100%;
 }
 .v-image {

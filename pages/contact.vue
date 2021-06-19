@@ -120,7 +120,6 @@ export default {
 
 <style lang="scss" scoped>
 .contact-container {
-	background-color: white;
 	height: 100%;
 }
 .v-form {
