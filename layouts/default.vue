@@ -16,18 +16,11 @@
 						dark
 						v-bind="attrs"
 						v-on="on"
-						@click="$vuetify.theme.dark = !$vuetify.theme.dark"
+						@click="setColorMode"
 					>
 						<v-icon>mdi-white-balance-sunny</v-icon>
 					</v-btn>
-					<v-btn
-						v-else
-						icon
-						dark
-						v-bind="attrs"
-						v-on="on"
-						@click="$vuetify.theme.dark = !$vuetify.theme.dark"
-					>
+					<v-btn v-else icon dark v-bind="attrs" v-on="on" @click="setColorMode">
 						<v-icon>mdi-weather-night</v-icon>
 					</v-btn>
 				</template>
@@ -110,6 +103,15 @@ export default {
 	},
 	mounted() {
 		this.isSmallScreen = window.innerWidth < 868
+		const mode = localStorage.getItem('darkMode')
+		// localStorage values can only be stored as strings. Parse to boolean value
+		this.$vuetify.theme.dark = JSON.parse(mode)
+	},
+	methods: {
+		setColorMode() {
+			this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+			localStorage.setItem('darkMode', this.$vuetify.theme.dark)
+		}
 	}
 }
 </script>
