@@ -1,5 +1,5 @@
 <template>
-	<v-app class="main-container" style="background-color: #596678">
+	<v-app class="main-container">
 		<v-app-bar
 			:height="isSmallScreen ? '50px' : '64px'"
 			prominent
@@ -8,8 +8,25 @@
 			color="#2F61A5"
 			app
 		>
-			<v-spacer></v-spacer>
+			<v-tooltip bottom>
+				<template #activator="{ on, attrs }">
+					<v-btn
+						v-if="$vuetify.theme.dark"
+						icon
+						dark
+						v-bind="attrs"
+						v-on="on"
+						@click="setColorMode"
+					>
+						<v-icon>mdi-white-balance-sunny</v-icon>
+					</v-btn>
+					<v-btn v-else icon dark v-bind="attrs" v-on="on" @click="setColorMode">
+						<v-icon>mdi-weather-night</v-icon>
+					</v-btn>
+				</template>
+			</v-tooltip>
 
+			<v-spacer></v-spacer>
 			<v-app-bar-title
 				class="name-title"
 				:style="isSmallScreen ? 'font-size: 30px; margin:auto;' : 'font-size: 40px;'"
@@ -46,27 +63,27 @@
 			style="background-color: transparent"
 		>
 			<v-btn icon absolute style="bottom: 0; right: 0" @click="showFooter = !showFooter"
-				><v-icon color="white"> mdi-information-outline</v-icon></v-btn
+				><v-icon color="#596678"> mdi-information-outline</v-icon></v-btn
 			>
 			<v-col v-if="showFooter" cols="12">
 				<v-row class="justify-center">
 					<span class="footer-text"
-						>{{ new Date().getFullYear() }}&#169; <strong>Made with ❤️</strong></span
+						>{{ new Date().getFullYear() }}&#169; <strong>Made with ❤️ |</strong></span
 					>
-					<v-btn href="https://github.com/shayan09" target="_blank" color="white" icon
+					<v-btn href="https://github.com/shayan09" target="_blank" color="#596678" icon
 						><v-icon> mdi-github</v-icon></v-btn
 					>
 					<v-btn
 						href="https://stackoverflow.com/users/8147086/shayan"
 						target="_blank"
-						color="white"
+						color="#596678"
 						icon
 						><v-icon> mdi-stack-overflow</v-icon></v-btn
 					>
 					<v-btn
 						href="https://www.linkedin.com/in/shayansadar/"
 						target="_blank"
-						color="white"
+						color="#596678"
 						icon
 						><v-icon> mdi-linkedin</v-icon></v-btn
 					>
@@ -86,6 +103,15 @@ export default {
 	},
 	mounted() {
 		this.isSmallScreen = window.innerWidth < 868
+		const mode = localStorage.getItem('darkMode')
+		// localStorage values can only be stored as strings. Parse to boolean value
+		this.$vuetify.theme.dark = JSON.parse(mode)
+	},
+	methods: {
+		setColorMode() {
+			this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+			localStorage.setItem('darkMode', this.$vuetify.theme.dark)
+		}
 	}
 }
 </script>
@@ -100,7 +126,7 @@ export default {
 	font-size: 30px;
 }
 .footer-text {
-	color: white;
+	color: #596678;
 	margin: auto 0px;
 }
 </style>

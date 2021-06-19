@@ -6,17 +6,15 @@
 					<SideIntro />
 				</v-col>
 				<v-col :class="isSmallScreen ? 'col-md-12' : 'col-md-10'">
-					<v-card class="pa-3 mt-3">
-						<div class="row">
-							<Education />
+					<div class="row">
+						<Education />
 
-							<WorkExperience />
-						</div>
+						<WorkExperience />
+					</div>
 
-						<Publications />
+					<Publications />
 
-						<Awards />
-					</v-card>
+					<Awards />
 				</v-col>
 			</v-row>
 		</div>
@@ -76,14 +74,12 @@ export default {
 	line-height: 2rem;
 	font-size: 24px;
 	border: 1px;
-	background-color: #596678;
-	color: white;
+	color: #596678;
 }
 .mobile-header {
 	font-family: 'Farro', sans-serif;
 	font-size: 16px;
 	border: 1px;
-	background-color: #596678;
-	color: white;
+	color: #596678;
 }
 </style>
